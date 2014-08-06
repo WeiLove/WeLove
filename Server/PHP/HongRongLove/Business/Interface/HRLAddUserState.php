@@ -9,7 +9,7 @@ require_once dirname ( __DIR__ ) . '/UserStateMngr.php';
 $uid = $_REQUEST [REQUEST_UID];
 $user_state = $_REQUEST [REQUEST_USER_STATE];
 
-$result = UserStateMngr::addUserState ( $uid, $user_state );
+$result = HRLUserStateMngr::addUserState ( $uid, $user_state );
 
 echo $result;
 ?>

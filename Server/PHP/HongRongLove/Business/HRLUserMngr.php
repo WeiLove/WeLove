@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/RemoteDBMngr' . '/Common/HRLConstantDefine.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/RemoteDBMngr' . '/RemoteDBMngr/HRLRemoteDBMngr.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/RemoteDBMngr' . '/Business/HRLUtil.php';
-class UserMngr {
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Common/HRLConstantDefine.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/RemoteDBMngr/HRLRemoteDBMngr.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Business/HRLUtil.php';
+class HRLUserMngr {
 	/**
 	 * 检查是否有用户uid（内部接口，外部不能直接访问，要实现相同功能请重写接口，调用此接口）
 	 *
@@ -14,7 +14,7 @@ class UserMngr {
 		
 		if ($uid) {
 			$sql = 'select * from ' . TABLE_USER . ' where ' . TABLE_USER_UID . ' = ' . $uid;
-			$result = RemoteDBMngr::shareInstance ()->query ( $sql );
+			$result = HRLRemoteDBMngr::shareInstance ()->query ( $sql );
 		}
 		
 		return $result;
@@ -34,7 +34,7 @@ class UserMngr {
 		
 		try {
 			$sql = sprintf ( "select * from %s where %s=%d and %s='%s'", TABLE_USER, TABLE_USER_UID, $uid, TABLE_USER_PASSWORD, $password );
-			$data = RemoteDBMngr::shareInstance ()->query ( $sql );
+			$data = HRLRemoteDBMngr::shareInstance ()->query ( $sql );
 			
 			if ($data) {
 			} else {

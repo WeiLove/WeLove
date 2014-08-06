@@ -1,9 +1,9 @@
 <?php
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/RemoteDBMngr' . '/Common/HRLConstantDefine.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/RemoteDBMngr' . '/RemoteDBMngr/HRLRemoteDBMngr.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/RemoteDBMngr' . '/Business/HRLUserMngr.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/RemoteDBMngr' . '/Business/HRLUtil.php';
-class UserMsgMngr {
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Common/HRLConstantDefine.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/RemoteDBMngr/HRLRemoteDBMngr.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Business/HRLUserMngr.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Business/HRLUtil.php';
+class HRLUserMsgMngr {
 	public static function getUserUnReadMsgCount($uid) {
 		$result = NULL;
 		$data = NULL;
@@ -12,9 +12,9 @@ class UserMsgMngr {
 		
 		try {
 			// 检查是否存在uid
-			if (UserMngr::hasUser ( $uid )) {
+			if (HRLUserMngr::hasUser ( $uid )) {
 				$sql = 'select count(*) total from ' . TABLE_USER_MSG . ' where ' . TABLE_USER_MSG_HAS_READ . '=0' . ' and ' . TABLE_USER_MSG_UID . '=' . $uid;
-				$data = RemoteDBMngr::shareInstance ()->query ( $sql );
+				$data = HRLRemoteDBMngr::shareInstance ()->query ( $sql );
 			} else {
 				throw new Exception ( ERROR_MSG_REQUEST_UID_NOT_FOUND, ERROR_CODE_REQUEST_UID_NOT_FOUND );
 			}
@@ -39,15 +39,15 @@ class UserMsgMngr {
 		
 		try {
 			// 检查是否存在uid
-			if (UserMngr::hasUser ( $uid )) {
+			if (HRLUserMngr::hasUser ( $uid )) {
 				$sql = 'select * from ' . TABLE_USER_MSG . ' where ' . TABLE_USER_MSG_HAS_READ . '=0' . ' and ' . TABLE_USER_MSG_UID . '=' . $uid . ' order by create_date asc limit 5';
-				$data = RemoteDBMngr::shareInstance ()->query ( $sql , 1);
+				$data = HRLRemoteDBMngr::shareInstance ()->query ( $sql, 1 );
 				if ($data) {
 					// 标注已读状态
 					for($i = 0; $i < count ( $data ); $i ++) {
 						$mid = $data [$i] [TABLE_USER_MSG_MID];
 						$sql = 'update ' . TABLE_USER_MSG . ' set ' . TABLE_USER_MSG_HAS_READ . ' = 1 where ' . TABLE_USER_MSG_MID . '=' . $mid;
-						RemoteDBMngr::shareInstance ()->execute ( $sql );
+						HRLRemoteDBMngr::shareInstance ()->execute ( $sql );
 					}
 				} else {
 					throw new Exception ( ERROR_MSG_NO_RESULT, ERROR_CODE_NO_RESULT );
