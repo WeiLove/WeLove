@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>425EFA4B-BC65-4779-BD94-38C9E6C84CC7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HongRongLove</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>559602B7-67F9-48ED-9977-CE155859E335</key>
+		<string>https://github.com/WeiLove/WeLove.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Client/IOS/HongRongLove/HongRongLove.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>559602B7-67F9-48ED-9977-CE155859E335</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/WeiLove/WeLove.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>559602B7-67F9-48ED-9977-CE155859E335</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>559602B7-67F9-48ED-9977-CE155859E335</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WeLove</string>
+		</dict>
+	</array>
+</dict>
+</plist>
