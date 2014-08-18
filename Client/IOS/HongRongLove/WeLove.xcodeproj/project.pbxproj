@@ -142,7 +142,7 @@
 		D1454ACD1967F53A00246FDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1454AD31967F53A00246FDA /* WeLoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeLoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1454AD41967F53A00246FDA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D1454ADC1967F53A00246FDA /* HongRongLoveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HongRongLoveTests-Info.plist"; sourceTree = "<group>"; };
+		D1454ADC1967F53A00246FDA /* WeLoveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeLoveTests-Info.plist"; sourceTree = "<group>"; };
 		D1454ADE1967F53A00246FDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D1454AE01967F53A00246FDA /* WeLoveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeLoveTests.m; sourceTree = "<group>"; };
 		D1454B421967F8E400246FDA /* WLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLBaseViewController.h; path = UI/ViewController/WLBaseViewController.h; sourceTree = "<group>"; };
@@ -444,14 +444,13 @@
 				D1454AE01967F53A00246FDA /* WeLoveTests.m */,
 				D1454ADB1967F53A00246FDA /* Supporting Files */,
 			);
-			name = WeLoveTests;
-			path = HongRongLoveTests;
+			path = WeLoveTests;
 			sourceTree = "<group>";
 		};
 		D1454ADB1967F53A00246FDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D1454ADC1967F53A00246FDA /* HongRongLoveTests-Info.plist */,
+				D1454ADC1967F53A00246FDA /* WeLoveTests-Info.plist */,
 				D1454ADD1967F53A00246FDA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -1332,19 +1331,19 @@
 		D1454AE81967F53A00246FDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HangZhouPublicBicycle.app/HangZhouPublicBicycle";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WeLove.app/WeLove";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HangZhouPublicBicycle/HangZhouPublicBicycle-Prefix.pch";
+				GCC_PREFIX_HEADER = "WeLove/WeLove-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "WeLoveTests/HongRongLoveTests-Info.plist";
+				INFOPLIST_FILE = "WeLoveTests/WeLoveTests-Info.plist";
 				PRODUCT_NAME = WeLoveTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1354,15 +1353,15 @@
 		D1454AE91967F53A00246FDA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HangZhouPublicBicycle.app/HangZhouPublicBicycle";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WeLove.app/WeLove";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HangZhouPublicBicycle/HangZhouPublicBicycle-Prefix.pch";
-				INFOPLIST_FILE = "WeLoveTests/HongRongLoveTests-Info.plist";
+				GCC_PREFIX_HEADER = "WeLove/WeLove-Prefix.pch";
+				INFOPLIST_FILE = "WeLoveTests/WeLoveTests-Info.plist";
 				PRODUCT_NAME = WeLoveTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
