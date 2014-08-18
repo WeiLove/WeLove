@@ -1,9 +1,9 @@
 <?php
 header ( "Content-Type: text/html;charset=gbk" );
 
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Common/HRLConstantDefine.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Business/HRLUserMngr.php';
-class HRLSocketServer {
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/Common/WLConstantDefine.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/Business/WLUserMngr.php';
+class WLSocketServer {
 	private $serverSocket;
 	private $clientSocket;
 	private $clientUid;
@@ -113,7 +113,7 @@ class HRLSocketServer {
 		$password = $msg [SOCKET_PROTOCOL_USER_PASSWORD];
 		
 		// check has user
-		if (HRLUserMngr::hasUser ( $from_uid )) {
+		if (WLUserMngr::hasUser ( $from_uid )) {
 			echo 'µÇÂ¼³É¹¦£¬»¶Ó­!';
 			$this->clientUid = $from_uid;
 			$sendMsg [] = socket_write ( $this->clientSocket, 'µÇÂ¼³É¹¦£¬»¶Ó­!' );

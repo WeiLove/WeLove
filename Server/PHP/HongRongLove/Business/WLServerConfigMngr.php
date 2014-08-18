@@ -1,9 +1,9 @@
 <?php
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Common/HRLConstantDefine.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/RemoteDBMngr/HRLRemoteDBMngr.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Business/HRLUtil.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/Common/WLConstantDefine.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/RemoteDBMngr/WLRemoteDBMngr.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/Business/WLUtil.php';
 
-class HRLServerConfigMngr {
+class WLServerConfigMngr {
 	public static function getServerConfig() {
 		
 		$result = NULL;
@@ -13,7 +13,7 @@ class HRLServerConfigMngr {
 		
 		try {
 			$sql = 'select * from ' . TABLE_SERVER_CONFIG;
-			$data = HRLRemoteDBMngr::shareInstance ()->query ( $sql );
+			$data = WLRemoteDBMngr::shareInstance ()->query ( $sql );
 			
 			if (! $data) {
 				throw new Exception ( ERROR_CODE_REQUEST_SERVER_CONFIG_ERROR, ERROR_MSG_REQUEST_SERVER_CONFIG_ERROR );

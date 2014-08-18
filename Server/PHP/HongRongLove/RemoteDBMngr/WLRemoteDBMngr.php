@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/RemoteDBMngr/HRLRemoteDBConnect.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Common/HRLConstantDefine.php';
-class HRLRemoteDBMngr extends HRLRemoteDBConnect {
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/RemoteDBMngr/WLRemoteDBConnect.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/Common/WLConstantDefine.php';
+class WLRemoteDBMngr extends WLRemoteDBConnect {
 	private static $instance = NULL;
 	
 	/**
@@ -21,7 +21,7 @@ class HRLRemoteDBMngr extends HRLRemoteDBConnect {
 	 */
 	public static function shareInstance() {
 		if (is_null ( self::$instance )) {
-			self::$instance = new HRLRemoteDBMngr ();
+			self::$instance = new WLRemoteDBMngr ();
 			self::$instance->connect_db ( DB_SERVER_NAME, DB_USER_NAME, DB_USER_PASSWORD );
 			self::$instance->select_db ( DB_NAME );
 		}

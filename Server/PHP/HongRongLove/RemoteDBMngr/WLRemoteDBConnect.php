@@ -1,12 +1,12 @@
 <?php
-interface HRLDBOperationInterface {
+interface WLDBOperationInterface {
 	function connect_db($serverName, $userName, $password); // 连接数据库
 	function disconnect_db(); // 断开连接
 	function select_db($dbName); // 选择数据库
 	function query($sql); // 查询sql
 	function execute($sql); // 执行sql
 }
-class HRLRemoteDBConnect implements HRLDBOperationInterface {
+class WLRemoteDBConnect implements WLDBOperationInterface {
 	private $serverName;
 	private $dbName;
 	private $userName;

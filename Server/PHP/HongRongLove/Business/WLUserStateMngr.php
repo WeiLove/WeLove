@@ -1,9 +1,9 @@
 <?php
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/RemoteDBMngr/HRLRemoteDBMngr.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Common/HRLConstantDefine.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Business/HRLUserMngr.php';
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/HongRongLove' . '/Business/HRLUtil.php';
-class HRLUserStateMngr {
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/RemoteDBMngr/WLRemoteDBMngr.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/Common/WLConstantDefine.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/Business/WLUserMngr.php';
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/Business/WLUtil.php';
+class WLUserStateMngr {
 	
 	/**
 	 * 获取当前日期，按指定格式返回
@@ -30,23 +30,23 @@ class HRLUserStateMngr {
 		
 		try {
 			// 先查是否有这个uid
-			if (HRLUserMngr::hasUser ( $uid )) {
+			if (WLUserMngr::hasUser ( $uid )) {
 				
 				// 取一条状态，时间最早的
 				$sql = sprintf ( "select * from %s where %s=%d and %s=%d order by %s asc limit 1", TABLE_USER_STATE, TABLE_USER_STATE_UID, $uid, TABLE_USER_STATE_HAS_READ, 0, TABLE_USER_STATE_CREATE_DATE );
-				$data = HRLRemoteDBMngr::shareInstance ()->query ( $sql );
+				$data = WLRemoteDBMngr::shareInstance ()->query ( $sql );
 				
 				if ($data) {
 					// 有未读状态，标注为已读啦
 					$sid = $data [TABLE_USER_STATE_SID];
 					$read_date = self::getCurrentDate ();
 					$sql = sprintf ( "update %s set %s='%s',%s=%d where %s=%d", TABLE_USER_STATE, TABLE_USER_STATE_READ_DATE, $read_date, TABLE_USER_STATE_HAS_READ, 1, TABLE_USER_STATE_SID, $sid );
-					HRLRemoteDBMngr::shareInstance ()->execute ( $sql );
+					WLRemoteDBMngr::shareInstance ()->execute ( $sql );
 				} else {
 					// 没有未读的状态了，且没有sid，返回最新的一条已读状态
 					$sid = $_REQUEST [TABLE_USER_STATE_SID];
 					$sql = sprintf ( "select * from %s where %s=%d and %s=%d order by %s desc limit 1", TABLE_USER_STATE, TABLE_USER_STATE_UID, $uid, TABLE_USER_STATE_HAS_READ, 1, TABLE_USER_STATE_CREATE_DATE );
-					$data = HRLRemoteDBMngr::shareInstance ()->query ( $sql );
+					$data = WLRemoteDBMngr::shareInstance ()->query ( $sql );
 					
 					if ($sid == $data [TABLE_USER_STATE_SID]) {
 						// 如果sid一样，说明客户端已经有缓存了，不需要传回去
@@ -88,11 +88,11 @@ class HRLUserStateMngr {
 		
 		try {
 			// 先查是否有这个uid
-			if ($user_state && HRLUserMngr::hasUser ( $uid )) {
+			if ($user_state && WLUserMngr::hasUser ( $uid )) {
 				$create_date = self::getCurrentDate ();
 				$sql = 'insert into ' . TABLE_USER_STATE . '(' . TABLE_USER_STATE_UID . ', ' . TABLE_USER_STATE_USER_STATE . ', ' . TABLE_USER_STATE_CREATE_DATE . ') 
 				values ( $uid, $user_state, $create_date )';
-				$data = HRLRemoteDBMngr::shareInstance ()->execute ( $sql );
+				$data = WLRemoteDBMngr::shareInstance ()->execute ( $sql );
 				
 				if ($data) {
 					// 添加状态成功
