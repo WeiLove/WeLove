@@ -1,27 +1,27 @@
-HongRongLove
+WeiLove
 ============
 项目背景
 
 ============
 服务端目前采用PHP，在目录Server/PHP下面<br>
 注意：<br>
-1.所有文件名称、类名必须加前缀HRL；<br>
+1.所有文件名称、类名必须加前缀WL；<br>
 2.公共的类、方法，请放在目录Common下；<br>
-3.所有常量定义放在文件HRLConstantDefine.h中，必须注释变量的含义、值等；<br>
+3.所有常量定义放在文件WLConstantDefine.h中，必须注释变量的含义、值等；<br>
 4.所有外部访问的接口请放在目录Business/Interface下，其他内部业务放目录在Business下；<br>
 5.所有文档放在目录Docs下。<br>
 
 ============
 客户端目前只有IOS项目，在目录Client/IOS下面<br>
 注意：<br>
-1.所有文件名称、类名必须加前缀HRL；<br>
+1.所有文件名称、类名必须加前缀WL；<br>
 2.公共类、方法，放在目录Common下，具体业务放在不同的子目录下，如view放在目录Common/UI/View下；<br>
 3.所有业务相关，放在目录Business下，具体业务放在不同的子目录下，如map相关放在目录Business/Map下；<br>
-4.所有DataModel，都要继承HRLBaseDataModel；<br>
-5.所有ViewController，都要继承HRLBaseViewController；<br>
-6.所有TableViewController，都要继承HRLTableViewController；<br>
-7.所有View，都要继承HRLBaseView；<br>
-8.所有Cell，都要继承HRLBaseTableViewCell；<br>
+4.所有DataModel，都要继承WLBaseDataModel；<br>
+5.所有ViewController，都要继承WLBaseViewController；<br>
+6.所有TableViewController，都要继承WLTableViewController；<br>
+7.所有View，都要继承WLBaseView；<br>
+8.所有Cell，都要继承WLBaseTableViewCell；<br>
 9.三方库，放在目录3rd下，不允许修改三方库，除非确实需要修改明显的错误、警告；<br>
 10.宏定义放在目录Define下；<br>
 11.extension放在目录Extension下；<br>
