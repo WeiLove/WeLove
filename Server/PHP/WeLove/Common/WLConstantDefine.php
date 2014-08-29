@@ -7,11 +7,49 @@
 /**
  * *****************************************************************************
  */
+// 通用字段定义
+define ( 'TABLE_COLUMN_CREATE_TIME', 'create_time' );
+define ( 'TABLE_COLUMN_MODIFY_TIME', 'modify_time' );
+define ( 'TABLE_SERVER_CREATE_IP', 'create_ip' );
+define ( 'TABLE_COLUMN_REMOTE_IP', 'remote_ip' );
+define ( 'TABLE_SERVER_COLUMN_STATE_ID', 'state_id' );
+
+// 扩展字段定义
+define ( 'TABLE_COLUMN_EXT_TEXT1', 'extColumn1' );
+define ( 'TABLE_COLUMN_EXT_TEXT2', 'extColumn2' );
+define ( 'TABLE_COLUMN_EXT_TEXT3', 'extColumn3' );
+define ( 'TABLE_COLUMN_EXT_TEXT4', 'extColumn4' );
+define ( 'TABLE_COLUMN_EXT_TEXT5', 'extColumn5' );
+define ( 'TABLE_COLUMN_EXT_TEXT6', 'extColumn6' );
+define ( 'TABLE_COLUMN_EXT_TEXT7', 'extColumn7' );
+define ( 'TABLE_COLUMN_EXT_TEXT8', 'extColumn8' );
+define ( 'TABLE_COLUMN_EXT_TEXT9', 'extColumn9' );
+define ( 'TABLE_COLUMN_EXT_TEXT10', 'extColumn10' );
+define ( 'TABLE_COLUMN_EXT_TEXT11', 'extColumn11' );
+define ( 'TABLE_COLUMN_EXT_TEXT12', 'extColumn12' );
+define ( 'TABLE_COLUMN_EXT_TEXT13', 'extColumn13' );
+define ( 'TABLE_COLUMN_EXT_TEXT14', 'extColumn14' );
+define ( 'TABLE_COLUMN_EXT_TEXT15', 'extColumn15' );
+define ( 'TABLE_COLUMN_EXT_TEXT16', 'extColumn16' );
+define ( 'TABLE_COLUMN_EXT_TEXT17', 'extColumn17' );
+define ( 'TABLE_COLUMN_EXT_TEXT18', 'extColumn18' );
+define ( 'TABLE_COLUMN_EXT_TEXT19', 'extColumn19' );
+define ( 'TABLE_COLUMN_EXT_TEXT20', 'extColumn20' );
+define ( 'TABLE_COLUMN_EXT_BLOB21', 'extColumn21' );
+define ( 'TABLE_COLUMN_EXT_BLOB22', 'extColumn22' );
+define ( 'TABLE_COLUMN_EXT_BLOB23', 'extColumn23' );
+define ( 'TABLE_COLUMN_EXT_BLOB24', 'extColumn24' );
+define ( 'TABLE_COLUMN_EXT_BLOB25', 'extColumn25' );
+
 // 声明远程数据库信息
-define ( 'DB_SERVER_NAME', '103.27.208.222' );
+// define ( 'DB_SERVER_NAME', '103.27.208.222' );
+// define ( 'DB_NAME', 'db56233' );
+// define ( 'DB_USER_NAME', 'db56233' );
+// define ( 'DB_USER_PASSWORD', 'CWHcwh123' );
+define ( 'DB_SERVER_NAME', '127.0.0.1' );
 define ( 'DB_NAME', 'db56233' );
-define ( 'DB_USER_NAME', 'db56233' );
-define ( 'DB_USER_PASSWORD', 'CWHcwh123' );
+define ( 'DB_USER_NAME', 'root' );
+define ( 'DB_USER_PASSWORD', 'root' );
 
 // 用户状态表
 define ( 'TABLE_USER_STATE', 'user_state' ); // 用户状态表
@@ -34,9 +72,13 @@ define ( 'TABLE_USER_PASSWORD', 'user_password' ); // 用户密码
 define ( 'TABLE_USER_MSG_HAS_READ', 'has_read' ); // 是否已读
                                                   
 // 服务器配置表
-define ( 'TABLE_SERVER_CONFIG', 'msg_server_config' );
-define ( 'TABLE_SERVER_CONFIG_SERVER_NAME', 'server_name' );
-define ( 'TABLE_SERVER_CONFIG_PORT', 'port' );
+define ( 'TABLE_SERVER', 'server' );
+define ( 'TABLE_SERVER_SERVER_NAME', 'server_name' );
+define ( 'TABLE_SERVER_PORT', 'port' );
+define ( 'TABLE_SERVER_DB_SERVER_IP', 'db_server_ip' );
+define ( 'TABLE_SERVER_DB_NAME', 'db_name' );
+define ( 'TABLE_SERVER_DB_USER_NAME', 'db_user_name' );
+define ( 'TABLE_SERVER_DB_USER_PASSWORD', 'db_user_password' );
 
 /**
  * *****************************************************************************

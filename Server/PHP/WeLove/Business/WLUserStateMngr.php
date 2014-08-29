@@ -6,16 +6,6 @@ require_once $_SERVER ['DOCUMENT_ROOT'] . '/WeLove' . '/Business/WLUtil.php';
 class WLUserStateMngr {
 	
 	/**
-	 * 获取当前日期，按指定格式返回
-	 *
-	 * @return 返回当前日期
-	 */
-	public static function getCurrentDate() {
-		date_default_timezone_set ( "Asia/Shanghai" );
-		return date ( 'Y-m-d H:i:s' );
-	}
-	
-	/**
 	 * 获取用户状态
 	 *
 	 * @param $uid 用户id，不能为NULL        	
@@ -39,7 +29,7 @@ class WLUserStateMngr {
 				if ($data) {
 					// 有未读状态，标注为已读啦
 					$sid = $data [TABLE_USER_STATE_SID];
-					$read_date = self::getCurrentDate ();
+					$read_date = getDatetime();
 					$sql = sprintf ( "update %s set %s='%s',%s=%d where %s=%d", TABLE_USER_STATE, TABLE_USER_STATE_READ_DATE, $read_date, TABLE_USER_STATE_HAS_READ, 1, TABLE_USER_STATE_SID, $sid );
 					WLRemoteDBMngr::shareInstance ()->execute ( $sql );
 				} else {
@@ -89,7 +79,7 @@ class WLUserStateMngr {
 		try {
 			// 先查是否有这个uid
 			if ($user_state && WLUserMngr::hasUser ( $uid )) {
-				$create_date = self::getCurrentDate ();
+				$create_date = getDatetime();
 				$sql = 'insert into ' . TABLE_USER_STATE . '(' . TABLE_USER_STATE_UID . ', ' . TABLE_USER_STATE_USER_STATE . ', ' . TABLE_USER_STATE_CREATE_DATE . ') 
 				values ( $uid, $user_state, $create_date )';
 				$data = WLRemoteDBMngr::shareInstance ()->execute ( $sql );

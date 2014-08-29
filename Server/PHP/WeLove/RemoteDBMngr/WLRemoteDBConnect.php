@@ -16,14 +16,15 @@ class WLRemoteDBConnect implements WLDBOperationInterface {
 		$this->serverName = $serverName;
 		$this->userName = $userName;
 		$this->password = $password;
-		
-		$this->connect = mysql_connect ( $serverName, $userName, $password );
+
+		$this->connect = mysql_connect ( $serverName, $userName, $password );	
 	}
 	function select_db($dbName) {
 		$this->dbName = $dbName;
 		
 		mysql_select_db ( $dbName );
 	}
+	
 	function query($sql, $isReturnArray = 0) {
 		mysql_query("set names gbk");
 		$result = mysql_query ( $sql );
@@ -38,7 +39,6 @@ class WLRemoteDBConnect implements WLDBOperationInterface {
 		} else {
 			$array = mysql_fetch_assoc ( $result );
 		}
-		
 		return $array;
 	}
 	function disconnect_db() {
